@@ -7,12 +7,41 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>discovery</ion-title>
+    <ion-title>发现</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="下拉刷新" refreshingSpinner="circles" refreshingText="刷新中...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-card *ngFor="let item of questions" (click)="gotoDetails(item.IdentityId)">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="{{ item.HeadFace }} ">
+      </ion-avatar>
+      <p>{{ item.UserNickName }}发布了问题
+        <ion-icon class="more_button" name="more"></ion-icon>
+      </p>
+    </ion-item>
+    <h2>{{ item.ContentTitle }}</h2>
+    <ion-card-content>
+      <p>{{ item.ContentSummary }}</p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col col-8 center text-left>
+        <ion-note>
+          {{ item.LikeCount }}&nbsp;赞同&nbsp;&nbsp;.&nbsp;&nbsp;{{ item.CommentCount
+          }}&nbsp;评论&nbsp;&nbsp;.&nbsp;&nbsp;关注问题
+        </ion-note>
+      </ion-col>
+      <ion-col col-4></ion-col>
+    </ion-row>
+
+  </ion-card>
 </ion-content>

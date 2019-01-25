@@ -96,4 +96,31 @@ export class RestProvider {
     return this.getUrlReturn(this.apiUrlFeeds);
   }
 
+  /*
+    发现模块：获取问题列表
+  */
+  getQuestions(): Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlQuestionList);
+  }
+
+  /*
+  加载问题详情页数据
+  */
+  getQuestion(id: string): Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlGetQuestion + '?id=' + id);
+  }
+  /*
+    加载问题详情, 传递questionid 和 userid 获取到当前用户有没有关注到此问题
+    */
+  getQuestionWithUser(questionId: string, userId: string): Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlGetQuestionWithUser + '?id=' + questionId + '&userid=' + userId);
+  }
+
+  saveFavourite(questionId: string, userId: string): Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlSaveFavourite + '?questionid=' + questionId + '&userid=' + userId);
+  }
+
+  answer(userId: string, questionId: string, content: string): Observable<string[]> {
+    return this.getUrlReturn(this.apiUrlAnswer + '?userid=' + userId + '&questionid=' + questionId + '&content=' + content);
+  }
 }

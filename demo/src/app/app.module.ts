@@ -18,6 +18,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { RestProvider } from '../providers/rest/rest';
 import { QuestionPage } from '../pages/question/question';
 import { DetailsPage } from '../pages/details/details';
+import { AnswerPage } from '../pages/answer/answer';
 import { HttpModule } from '@angular/http';
 
 import { IonicStorageModule } from '@ionic/storage';
@@ -42,6 +43,7 @@ import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
     HeadfacePage,
     QuestionPage,
     DetailsPage,
+    AnswerPage,
     TabsPage
   ],
   imports: [
@@ -66,6 +68,7 @@ import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
     HeadfacePage,
     QuestionPage,
     DetailsPage,
+    AnswerPage,
     TabsPage
   ],
   providers: [
