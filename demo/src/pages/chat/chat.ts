@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { ChatdetailsPage } from '../chatdetails/chatdetails';
 /**
  * Generated class for the ChatPage page.
  *
@@ -15,7 +15,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ChatPage {
 
+  public userinfo: Object;
+  public pushPage: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    // 演示目的，可以通过API接口获取数据库中的数据
+    this.userinfo = {
+      userid: "2312323",
+      username: "慕课女神"
+    }
+    this.pushPage = ChatdetailsPage;
   }
 
   ionViewDidLoad() {

@@ -19,6 +19,7 @@ import { RestProvider } from '../providers/rest/rest';
 import { QuestionPage } from '../pages/question/question';
 import { DetailsPage } from '../pages/details/details';
 import { AnswerPage } from '../pages/answer/answer';
+import { ChatdetailsPage } from '../pages/chatdetails/chatdetails';
 import { HttpModule } from '@angular/http';
 
 import { IonicStorageModule } from '@ionic/storage';
@@ -27,6 +28,7 @@ import { File } from '@ionic-native/file';
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
 import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
+import { EmojiProvider } from '../providers/emoji/emoji';
 
 
 @NgModule({
@@ -44,6 +46,7 @@ import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
     QuestionPage,
     DetailsPage,
     AnswerPage,
+    ChatdetailsPage,
     TabsPage
   ],
   imports: [
@@ -69,6 +72,7 @@ import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
     QuestionPage,
     DetailsPage,
     AnswerPage,
+    ChatdetailsPage,
     TabsPage
   ],
   providers: [
@@ -80,7 +84,9 @@ import { FileTransfer, FileTransferObject } from '@ionic-native/file-transfer';
     FilePath,
     Camera,
     FileTransfer,
-    FileTransferObject
+    FileTransferObject,
+    EmojiProvider
   ]
 })
+
 export class AppModule { }

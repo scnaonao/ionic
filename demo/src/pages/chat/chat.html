@@ -7,12 +7,22 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>chat</ion-title>
+    <ion-title>聊天</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-list>
+    <ion-item [navPush]="pushPage" [navParams]="userinfo">
+      <!-- 在页面中实现界面跳转-->
+      <ion-avatar item-left>
+        <img src="">
+      </ion-avatar>
+      <h2>慕课女</h2>
+      <p>给大家演示聊天组件的开发</p>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
